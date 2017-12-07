@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+    <% include ../partials/header %>
+    
+    <script>
+      var buscar = function(){
+        fetch("/api/users",{method:'get'})
+          .then(function(result){
+            console.log("result",result);
+          });
+      }
+    </script>
+    
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    
+    <a href="#" onclick="buscar();">Fetch "/api/users"</a>
+    
+    <% include ../partials/footer %>
+  </body>
+</html>
